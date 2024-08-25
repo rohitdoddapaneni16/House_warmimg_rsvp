@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP for Our Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 1rem;
+            color: #555;
+        }
+        input, select {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RSVP for Our Event</h1>
+        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/[YOUR_FORM_ID]/formResponse" method="post" target="_blank">
+            <label for="entry.1234567890">Name:</label>
+            <input type="text" id="entry.1234567890" name="entry.1234567890" required>
+
+            <label for="entry.0987654321">Phone Number:</label>
+            <input type="tel" id="entry.0987654321" name="entry.0987654321" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+
+            <label for="entry.1111111111">Will you attend?</label>
+            <select id="entry.1111111111" name="entry.1111111111" required>
+                <option value="Yes">Yes, I'll be there!</option>
+                <option value="No">Sorry, I can't make it.</option>
+            </select>
+
+            <label for="entry.2222222222">Number of guests:</label>
+            <input type="number" id="entry.2222222222" name="entry.2222222222" min="0" max="5" value="0">
+
+            <button type="submit">Submit RSVP</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                mode: 'no-cors'
+            }).then(() => {
+                alert('Thank you for your RSVP! We have received your response.');
+                this.reset();
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your RSVP. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
