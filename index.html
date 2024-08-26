@@ -183,6 +183,13 @@
                 alert('There was an error submitting your RSVP. Please try again.');
             });
         });
+
+        // New code to overwrite the number of guests field
+        document.getElementById('entry.1010520364').addEventListener('input', function(e) {
+            if (this.value === '0') {
+                this.value = '';
+            }
+        });
     </script>
 </body>
 </html>
