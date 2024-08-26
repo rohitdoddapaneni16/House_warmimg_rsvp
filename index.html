@@ -23,7 +23,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             filter: brightness(1);
-            transform: scale(1.2); /* This will zoom out the background */
+            transform: scale(1.2);
             transform-origin: center center;
         }
         .page-container {
@@ -89,6 +89,10 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             background-color: rgba(135, 206, 235, 0.2);
+            color: white; /* Change text color to white */
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5); /* Adjust placeholder color for better visibility */
         }
         button {
             margin-top: 1rem;
@@ -151,7 +155,7 @@
                     <label for="entry.641607109">Name:</label>
                     <input type="text" id="entry.641607109" name="entry.641607109" required>
                     <label for="entry.168287845">Phone Number:</label>
-                    <input type="tel" id="entry.168287845" name="entry.168287845" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                    <input type="tel" id="entry.168287845" name="entry.168287845" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="123-456-7890">
                     <label for="entry.307841635">Will you attend?</label>
                     <select id="entry.307841635" name="entry.307841635" required>
                         <option value="Yes">Yes, I'll be there!</option>
