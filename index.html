@@ -19,7 +19,8 @@
             margin: 0;
         }
         .container {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,6 +30,7 @@
         h1 {
             text-align: center;
             color: #333;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
         form {
             display: flex;
@@ -36,7 +38,8 @@
         }
         label {
             margin-top: 1rem;
-            color: #555;
+            color: #333;
+            font-weight: bold;
         }
         input, select {
             margin-top: 0.5rem;
