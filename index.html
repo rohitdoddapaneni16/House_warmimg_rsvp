@@ -155,7 +155,7 @@
                     <label for="entry.641607109">Name:</label>
                     <input type="text" id="entry.641607109" name="entry.641607109" required>
                     <label for="entry.168287845">Phone Number:</label>
-                    <input type="tel" id="entry.168287845" name="entry.168287845" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="123-456-7890">
+                    <input type="tel" id="entry.168287845" name="entry.168287845" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
                     <label for="entry.307841635">Will you attend?</label>
                     <select id="entry.307841635" name="entry.307841635" required>
                         <option value="Yes">Yes, I'll be there!</option>
@@ -184,10 +184,23 @@
             });
         });
 
-        // New code to overwrite the number of guests field
-        document.getElementById('entry.1010520364').addEventListener('input', function(e) {
+        // Updated code to overwrite the number of guests field
+        var guestInput = document.getElementById('entry.1010520364');
+        guestInput.addEventListener('focus', function(e) {
             if (this.value === '0') {
                 this.value = '';
+            }
+        });
+
+        guestInput.addEventListener('blur', function(e) {
+            if (this.value === '') {
+                this.value = '0';
+            }
+        });
+
+        guestInput.addEventListener('input', function(e) {
+            if (this.value.startsWith('0') && this.value.length > 1) {
+                this.value = this.value.substr(1);
             }
         });
     </script>
