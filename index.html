@@ -3,36 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House Warmimg</title>
+    <title>RSVP for Our Event</title>
     <style>
-        body {
+        body, html {
+            height: 100%;
+            margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url('https://raw.githubusercontent.com/rohitdoddapaneni16/House_warmimg_rsvp/main/il_fullxfull.467693416_cevr.webp');
+            background-image: url('https://via.placeholder.com/1920x1080.jpg?text=Event+Background');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+        }
+        .page-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            height: 100%;
             padding: 20px;
             box-sizing: border-box;
         }
-        .container {
+        .left-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 5%;
+            max-width: 50%;
+        }
+        .right-side {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        h1 {
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        .additional-text {
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            line-height: 1.6;
+            max-width: 600px;
+        }
+        .form-container {
             background-color: rgba(255, 255, 255, 0.2);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
-            margin-right: 5%;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
         }
         form {
             display: flex;
@@ -48,6 +74,7 @@
             padding: 0.5rem;
             border: 1px solid #ccc;
             border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         button {
             margin-top: 1rem;
@@ -57,45 +84,68 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-weight: bold;
         }
         button:hover {
             background-color: #45a049;
         }
         @media (max-width: 768px) {
-            body {
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding-top: 50px;
-                }
-            .container {
-                    margin-right: 0;
-                }
+            .page-container {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .left-side, .right-side {
+                width: 100%;
+                max-width: 100%;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 0;
+                text-align: center;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .additional-text {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            .form-container {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>"Welcome To Our House Warmimg Party !!!"</h1>
-        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd6JxUFN0Nx1Mh3MXcpzowhYtLtTgPfSNZfqaOlWqIjShgUcw/formResponse" method="post" target="_blank">
-            <label for="entry.641607109">Name:</label>
-            <input type="text" id="entry.641607109" name="entry.641607109" required>
-
-            <label for="entry.168287845">Phone Number:</label>
-            <input type="tel" id="entry.168287845" name="entry.168287845" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
-
-            <label for="entry.307841635">Will you attend?</label>
-            <select id="entry.307841635" name="entry.307841635" required>
-                <option value="Yes">Yes, I'll be there!</option>
-                <option value="No">Sorry, I can't make it.</option>
-            </select>
-
-            <label for="entry.1010520364">Number of guests:</label>
-            <input type="number" id="entry.1010520364" name="entry.1010520364" min="0" max="5" value="0">
-
-            <button type="submit">Submit RSVP</button>
-        </form>
+    <div class="page-container">
+        <div class="left-side">
+            <h1>"Welcome To Our House Warmimg Party !!!"</h1>
+            <p class="additional-text">
+                Join us for an unforgettable evening of celebration and community. 
+                We're excited to share this special moment with you. 
+                
+                Please let us know if you can make it by filling out the form on the right. 
+                We can't wait to see you there!
+            </p>
+        </div>
+        <div class="right-side">
+            <div class="form-container">
+                <form id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd6JxUFN0Nx1Mh3MXcpzowhYtLtTgPfSNZfqaOlWqIjShgUcw/formResponse" method="post" target="_blank">
+                    <label for="entry.641607109">Name:</label>
+                    <input type="text" id="entry.641607109" name="entry.641607109" required>
+                    <label for="entry.168287845">Phone Number:</label>
+                    <input type="tel" id="entry.168287845" name="entry.168287845" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                    <label for="entry.307841635">Will you attend?</label>
+                    <select id="entry.307841635" name="entry.307841635" required>
+                        <option value="Yes">Yes, I'll be there!</option>
+                        <option value="No">Sorry, I can't make it.</option>
+                    </select>
+                    <label for="entry.1010520364">Number of guests:</label>
+                    <input type="number" id="entry.1010520364" name="entry.1010520364" min="0" max="5" value="0">
+                    <button type="submit">Submit RSVP</button>
+                </form>
+            </div>
+        </div>
     </div>
-
     <script>
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -110,6 +160,19 @@
                 console.error('Error:', error);
                 alert('There was an error submitting your RSVP. Please try again.');
             });
+        });
+
+        window.addEventListener('load', function() {
+            const body = document.body;
+            const img = new Image();
+            img.onload = function() {
+                body.style.backgroundImage = `url('${this.src}')`;
+            };
+            img.onerror = function() {
+                console.error('Error loading background image');
+                body.style.backgroundColor = '#f0f0f0'; // Fallback background color
+            };
+            img.src = 'https://raw.githubusercontent.com/rohitdoddapaneni16/House_warmimg_rsvp/3fb42de5cd4abd6279edea85d715f4c4dfd594ed/a92974273a336714d0129e1e39a4e8bf.jpg';
         });
     </script>
 </body>
