@@ -22,7 +22,7 @@
             min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.3); /* Changed from rgba(0, 0, 0, 0.3) to increase brightness */
+            background-color: rgba(0, 0, 0, 0.3);
         }
         .left-side {
             flex: 1;
@@ -32,7 +32,7 @@
             align-items: flex-start;
             padding-left: 5%;
             max-width: 50%;
-            background-color: rgba(255, 255, 255, 0.2); /* Added slight background to improve readability */
+            background-color: rgba(255, 255, 255, 0);
             border-radius: 10px;
             padding: 40px;
         }
@@ -43,20 +43,20 @@
             align-items: center;
         }
         h1 {
-            color: #333; /* Changed from white to dark gray for better contrast */
+            color: white;
             font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5); /* Changed shadow color for better visibility */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             margin-bottom: 20px;
         }
         .additional-text {
-            color: #333; /* Changed from white to dark gray for better contrast */
+            color: white;
             font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.5); /* Changed shadow color for better visibility */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             line-height: 1.6;
             max-width: 600px;
         }
         .form-container {
-            background-color: rgba(255, 255, 255, 0.7); /* Increased opacity for better visibility */
+            background-color: rgba(255, 255, 255, 0.2);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -70,7 +70,7 @@
         }
         label {
             margin-top: 1rem;
-            color: #333;
+            color: #ffffff;
             font-weight: bold;
         }
         input, select {
@@ -83,7 +83,7 @@
         button {
             margin-top: 1rem;
             padding: 0.5rem;
-            background-color: #4CAF50;
+            background-color: #154f18;
             color: white;
             border: none;
             border-radius: 4px;
@@ -107,14 +107,10 @@
             .left-side, .right-side {
                 width: 100%;
                 max-width: 100%;
-                justify-content: flex-start;
+                justify-content: center;
                 align-items: center;
                 padding: 20px 0;
                 text-align: center;
-            }
-            .left-side {
-                margin-top: 30vh;
-                background-color: rgba(255, 255, 255, 0.5); /* Increased opacity for mobile */
             }
             h1 {
                 font-size: 2rem;
@@ -125,7 +121,7 @@
             }
             .form-container {
                 max-width: 90%;
-                margin: 20px auto 0;
+                margin: 0 auto;
             }
         }
     </style>
@@ -135,9 +131,9 @@
         <div class="left-side">
             <h1>Welcome To Our House Warmimg Party !!!</h1>
             <p class="additional-text">
-                 Join us for an unforgettable evening of celebration and community.
+                 Join us for an unforgettable day of celebration and warmth.
                  We're excited to share this special moment with you.<br><br>
-                 Please let us know if you can make it by filling out the form on the right.
+                 Please let us know if you can make it by filling out the form.
                  We can't wait to see you there!
             </p>
         </div>
@@ -155,7 +151,7 @@
                     </select>
                     <label for="entry.1010520364">Number of guests:</label>
                     <input type="number" id="entry.1010520364" name="entry.1010520364" min="0" max="5" value="0">
-                    <button type="submit">Submit RSVP</button>
+                    <button type="submit">RSVP Here</button>
                 </form>
             </div>
         </div>
